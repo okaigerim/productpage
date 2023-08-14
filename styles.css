@@ -1,0 +1,325 @@
+@font-face {
+  font-family: marioFont;
+  src: url(emulogic.ttf);
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  font-family: "marioFont", sans-serif;
+}
+
+/* Set font and base styles */
+html {
+  --header-height: 80px;
+  --nav-link-margin: 10px;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-size: 1.4rem;
+}
+
+/* Header styles */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  height: var(--header-height);
+  color: white;
+  background: #e54b4b;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5000;
+}
+
+#header-img {
+  height: 26px;
+  width: 26px;
+  margin: 0 0 4px 6px;
+}
+
+/* Navigation styles */
+#nav-links {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link:first-child {
+  margin-right: var(--nav-link-margin);
+}
+
+.nav-link:last-child {
+  margin-left: var(--nav-link-margin);
+}
+
+/* Main content styles */
+main {
+  padding: 20px;
+  border: 1px solid red;
+  /* width: 500px; */
+  padding-top: 0; /* Reset the top padding for the first section */
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+
+  background: cornflowerblue;
+}
+
+section {
+  scroll-margin-top: var(--header-height);
+  /* margin-bottom: 40px; */
+}
+
+#intro {
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid black;
+}
+
+#intro p {
+  border: 1px solid red;
+  width: 70%;
+}
+
+#intro img {
+  width: 600px;
+  height: 350px;
+  border: 1px solid red;
+}
+
+/* Footer styles */
+#footer {
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  background: #e54b4b;
+  height: var(--header-height);
+  padding: 0 2rem;
+  color: white;
+}
+
+#footer-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Product styles */
+.product {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.product img {
+  max-width: 150px;
+  margin-right: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 800px) {
+  /* Adjust styles for smaller screens */
+  #nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/**********************************************************************************************************************/
+/* Super Mario Background                                                                                             */
+/**********************************************************************************************************************/
+.fourblocks {
+  display: flex;
+  flex-direction: row; /* bottom: 350px; */
+}
+/* Each block is 100px x 100px in size and has a brick background */
+.block {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  background: url(img/regular-brick-block.png) 100%;
+}
+
+/* Moving the first block in to correct position */
+#blockOne {
+  left: 250px;
+}
+
+/* Moving the seconds block in to correct position */
+#blockTwo {
+  left: 350px;
+}
+
+/* Moving the third block in to correct position */
+#blockThree {
+  left: 550px;
+}
+
+/* Styling the pulsating question mark block that's located between brick block 2 and 3 */
+#questionMarkBlock {
+  width: 40px;
+  height: 40px;
+  background: url(img/question-mark-block.gif);
+  background-size: 40px 40px;
+  margin-right: 5px;
+}
+
+/*
+ * Styling the large cloud going across the screen in the background
+ * The large cloud is the one furthest in the back
+ */
+
+#clouds {
+  margin-top: 80px;
+}
+#cloudLarge {
+  width: 80px;
+  height: 80px;
+  background: url(img/cloud-large.png) no-repeat;
+  background-size: 80px;
+  /* position: fixed; */
+  /* bottom: 420px; */
+  left: 500px;
+  z-index: 1000;
+  -webkit-animation: move-large-cloud 5s linear infinite;
+  animation: move-large-cloud 5s linear infinite;
+  -o-animation: move-large-cloud 5s linear infinite;
+}
+
+/*
+ * Styling the small cloud going across the screen in the background
+ * The small cloud is the second furthest object in the background: in front of large cloud but behind rotating cube
+ */
+#cloudSmall {
+  width: 80px;
+  height: 80px;
+  background: url(img/cloud-small.png) no-repeat;
+  background-size: 80px;
+  /* position: fixed; */
+  /* bottom: 420px; */
+  left: 2300px;
+  z-index: 900;
+
+  -webkit-animation: move-small-cloud 7s linear infinite;
+  animation: move-small-cloud 7s linear infinite;
+  -o-animation: move-small-cloud 7s linear infinite;
+}
+
+/* Moves the large cloud from right to left */
+@-moz-keyframes move-large-cloud {
+  0% {
+    -moz-transform: translateX(500%);
+  }
+  100% {
+    -moz-transform: translateX(-175);
+  }
+}
+@-webkit-keyframes move-large-cloud {
+  0% {
+    -webkit-transform: translateX(500%);
+  }
+  100% {
+    -webkit-transform: translateX(-175%);
+  }
+}
+
+/* Moves the small cloud from left to right */
+@-moz-keyframes move-small-cloud {
+  0% {
+    -moz-transform: translateX(200%);
+  }
+  100% {
+    -moz-transform: translateX(-500);
+  }
+}
+@-webkit-keyframes move-small-cloud {
+  0% {
+    -webkit-transform: translateX(200%);
+  }
+  100% {
+    -webkit-transform: translateX(-500%);
+  }
+}
+.blocksandmario {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#superMarioRunning {
+  position: fixed;
+  /* bottom: 120px; */
+  background: url(img/super-mario-running.gif) no-repeat;
+  background-size: 100px;
+  width: 100%;
+  height: 100px;
+
+  /* Mario needs to appear in front of the bushes and hills */
+  /* z-index: 99; */
+
+  -webkit-animation: run-mario 5s linear infinite;
+  animation: run-mario 5s linear infinite;
+  -o-animation: run-mario 5s linear infinite;
+}
+
+/* Mario running across the screen and jumping over the pipe */
+@-moz-keyframes run-mario {
+  0% {
+    left: -300px;
+    bottom: 116px;
+  }
+  60% {
+    left: 1200px;
+    bottom: 116px;
+  }
+  75% {
+    left: 1440px;
+    bottom: 500px;
+  }
+  100% {
+    left: 1920px;
+    bottom: 300px;
+  }
+}
+@-webkit-keyframes run-mario {
+  0% {
+    left: -300px;
+    bottom: 116px;
+  }
+  60% {
+    left: 1200px;
+    bottom: 116px;
+  }
+  75% {
+    left: 1440px;
+    bottom: 500px;
+  }
+  100% {
+    left: 1920px;
+    bottom: 300px;
+  }
+}
