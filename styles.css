@@ -1,8 +1,10 @@
+/* Font definition */
 @font-face {
   font-family: marioFont;
   src: url(emulogic.ttf);
 }
 
+/* Reset default styles and set font */
 body,
 h1,
 h2,
@@ -90,6 +92,7 @@ section {
   /* margin-bottom: 40px; */
 }
 
+/* Introduction section styles */
 #intro {
   height: 400px;
   display: flex;
