@@ -1,7 +1,5 @@
 # Nintendo Product Page - Super Mario
 
-![Nintendo Logo](img/nintendo-logo.png)
-
 Welcome to the Nintendo Product Page for the iconic game, Super Mario! This project is a part of FreeCodeCamp's Product Page challenge and showcases information about Nintendo and its famous character, Mario.
 
 ## Table of Contents
@@ -9,9 +7,6 @@ Welcome to the Nintendo Product Page for the iconic game, Super Mario! This proj
 - [History of Nintendo](#history-of-nintendo)
 - [Super Mario Game Series](#super-mario-game-series)
 - [Products](#products)
-- [How to Use](#how-to-use)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
